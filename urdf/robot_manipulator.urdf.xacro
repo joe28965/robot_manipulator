@@ -3,6 +3,7 @@
 
 	<xacro:include filename="$(find robot_manipulator)/urdf/wheels.xacro"/>
 	<xacro:include filename="$(find robot_manipulator)/urdf/caster_wheels.xacro"/>
+	<xacro:include filename="$(find robot_manipulator)/urdf/lidar.xacro"/>
 
 	<link name="base_footprint" />
 
@@ -77,5 +78,10 @@
 			<robot_base_frame>base_footprint</robot_base_frame>
 		</plugin>
 	</gazebo>
+
+	<!-- Sensors -->
+	<xacro:lidar_sensor name="lidar" parent="base_link" >
+		<origin xyz="0.2 0 0.075" rpy="0 0 0"/>
+	</xacro:lidar_sensor>
 
 </robot>
